@@ -433,6 +433,7 @@ export default connect(
 * iterable Objects will soon be available : `let objClone = { ...obj }`
 * actions and reducers can be placed in `src/actions` and `src/reducers`
 * place your root reducer in the `src/reducers` folder as index.js
+
 ```
 import {combineReducer} from 'redux';
 import courses from './courseReducer';
@@ -443,15 +444,20 @@ const rootReducer = combineReducers() ({
 
 export default rootReducer;
 ```
+
 * the name that you use in the `rootReducer`'s properties is what you will eventually use as `this.state.courses` for example, even though your reducer may be name courseReducer.  courseReducer can be imported as course since it is the default export.
 * shorthand property name : in ES6, if the property name on the left is the same as its value on the right, we can omit the name on the right.
+
 ```
 courses: courses
 ```
+
 can be shortened to:
+
 ```
 courses
 ```
+
 ## Creating Store
 * `src/store` - keep store files here
 * `configureStore.js` - initial configuration
