@@ -461,6 +461,19 @@ courses
 ## Creating Store
 * `src/store` - keep store files here
 * `configureStore.js` - initial configuration
+## Connect function
+* This is what we wrap components with in order to make them compatible with Redux
+* These components will be container components.
+```
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
+```
+* This is two function calls in a row - calls the fisrt functions and then runs the returned function on the second function call
+* This is common in functional programming - returning a function and immediately calling it.
+* The mapStateToProps function and mapDispatchToProps function are both called below the component
+* dispatch can be left out of the connect function - react redux provides it by default.
+
+
+
 
 
     
