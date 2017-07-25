@@ -4,8 +4,8 @@
     "description": "React Environment Setup",
     "main": "index.js",
     "scripts": {
-        "start": "babel-node server.js",
-        "startDev": "npm-run-all --parallel open:src lint:watch",
+        "prestart": "",
+        "start": "npm-run-all --parallel open:src lint:watch",
         "open:src": "babel-node server.js",
         "lint": "node_modules/.bin/esw webpack.config.* src server",
         "lint:watch": "npm run lint -- --watch",
