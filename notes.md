@@ -479,7 +479,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
 * Remember - you can omit the parens when using a single argument in arrow functions `courses => {return 'no parens'}`
 ### mapDispatchToProps
 * when you define mapDispatchToProps, connect doesn't automatically pass dispatch as an argument because it no longer needs to.  You pass dispatch to your mapDispatchToProps wrapper and use dispatch to call the dispatch function you defined.
-* 
+* bindActionCreators is a method that can be imported from Redux.  It's purpose is to bind every action in the actions page that you specify (the one that corresponds to the component -- duh) to the component so that you can call them without declaring them in the component individually.
+```
+function mapDispatchToProps(dispatch){
+    return {
+        actions: bindActionCreators(componentActions, dispatch)
+    };
+}
+```
+* All actions declared in componentActions.js will be available to use in your component as `this.props.actions.specificAction();`
 
 
 
