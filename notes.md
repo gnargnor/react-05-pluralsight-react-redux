@@ -488,6 +488,27 @@ function mapDispatchToProps(dispatch){
 }
 ```
 * All actions declared in componentActions.js will be available to use in your component as `this.props.actions.specificAction();`
+## Asynchronous Flow with Redux
+### Why Mock APIs
+* Mock APIs can help you test your application before you have access to an API
+* It will also allow you to have a backup plan to test in case the actual API is down
+* You can test slowness using a setTimeout function
+* The real API can be pointed to and tested anytime it's ready
+### How Mock APIs
+* use libraries:
+  * redux-thunk - written by Dan Abramove
+  * redux-promise
+  * redux-saga - newest
+* thunks use functions, sagas use generators with yields
+* sagas is easier to test than sagas
+* thunk is easier to learn, saga is pretty difficult
+
+### Using Thunk!
+* Thunk is a library for handling asynchronous API calls.
+* A thunk is a function that returns a function
+* A thunk is comp sci - a function that wraps a function to delay the call of the wrapped function.
+* 
+
 
 
 
