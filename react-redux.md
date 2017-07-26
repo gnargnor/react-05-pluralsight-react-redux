@@ -461,7 +461,8 @@ courses
 ## Creating Store
 * `src/store` - keep store files here
 * `configureStore.js` - initial configuration
-## Connect function
+## Connect function 
+### (_some of these notes may be inaccurate due to "learning" taking place_)
 * This is what we wrap components with in order to make them compatible with Redux
 * These components will be container components.
 ```
@@ -471,6 +472,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
 * This is common in functional programming - returning a function and immediately calling it.
 * The mapStateToProps function and mapDispatchToProps function are both called below the component
 * dispatch can be left out of the connect function - react redux provides it by default.
+* You have to include a key anytime you are iterating in React - include an idex arguement and pass the element a key prop of {index}
+* When eslint reports files that aren't up to snuff during watch, fixing them will report one clean file at a time rather than report what is still not clean.  Make sure this is paid proper attention - if unsure, reload
+* debugger - add break points in JavaScript that will pause the execution when run in the browser and give you information about what is happening and what values relevant properties and arguments have.  How did I not know about this sooner?
+* Mapping enumerable props to a function that returns a div that displays one at a time is a way to iterate over enumerable props
+* Remember - you can omit the parens when using a single argument in arrow functions `courses => {return 'no parens'}`
+### mapDispatchToProps
+* when you define mapDispatchToProps, connect doesn't automatically pass dispatch as an argument because it no longer needs to.  You pass dispatch to your mapDispatchToProps wrapper and use dispatch to call the dispatch function you defined.
+* 
 
 
 
