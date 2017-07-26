@@ -6,9 +6,9 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="jumbotron">
-                <h1>React / Redux / React Router</h1>
-                <p>Stater template for  a React application with Redux and React Router</p>
-                <Link to="about" className="btn btn-lg">About this template</Link>
+                <h1>React / Redux - Demo Project</h1>
+                <p>You're Gonna Learn Today</p>
+                <Link to="about" className="btn btn-lg">Learn more</Link>Check out the <a href="https://www.pluralsight.com">Pluralsight</a> course and the repository.
             </div>
         );
     }

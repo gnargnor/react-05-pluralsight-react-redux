@@ -20,6 +20,7 @@ class CoursesPage extends React.Component {
         this.setState({course:course});
     }
 
+    /** this call to actions is made possible by the connect function below */
     onClickSave(e) {
         this.props.createCourse(this.state.course);
     }
@@ -53,17 +54,19 @@ CoursesPage.propTypes = {
     createCourse: PropTypes.func.isRequired,
 };
 
-
+/** makes courses available as a property of this.props */
 function mapStateToProps(state, ownProps) {
     return {
         courses: state.courses
     };
 }
 
+/** makes createCourse available as a method of this.props in this function rather than generically calling the action in the class method with dispatch */
 function mapDispatchToProps(dispatch) {
     return {
         createCourse: course => dispatch(courseActions.createCourse(course))
     };
 }
 
+/** connect connects the save event listener to the createCourse action */
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
