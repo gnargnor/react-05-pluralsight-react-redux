@@ -507,7 +507,9 @@ function mapDispatchToProps(dispatch){
 * Thunk is a library for handling asynchronous API calls.
 * A thunk is a function that returns a function
 * A thunk is comp sci - a function that wraps a function to delay the call of the wrapped function.
-* 
+* Create an action that uses a promise to call an api and then returns a promise that calls a success action
+* The success action will be dispatched to the reducer
+* In order to get a api call to run on load, you can import it in your entry point and call it.
 
 
 
